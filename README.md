@@ -1,5 +1,9 @@
-# Awesome-Preference-Tuning
-## Preference Tuning in AI: History, Progression, Variants, & Applications
+<div align="center">
+  <img src="assets/banner.svg" alt="Awesome Preference Tuning Banner" width="100%">
+</div>
+
+# ✨ Awesome-Preference-Tuning
+## 🌟 Preference Tuning in AI: History, Progression, Variants, & Applications
 
 **Preference Tuning**—alternatively designated as human preference alignment, downstream behavior shaping, or value calibration optimization—is an advanced post-training paradigm in artificial intelligence designed to steer generative foundation models to conform to explicit human utility, safety, formatting style, and veracity standards [INDEX: 11, 25]. While initial self-supervised **Pre-training** optimizes models on massive token datasets to blindly mimic uncurated internet text [INDEX: 15], this frequently causes them to emit toxic tokens, execute hazardous payloads, or hallucinate false data. 
 
@@ -7,7 +11,7 @@ Preference Tuning serves as the critical behavior-shaping layer: by optimizing m
 
 ---
 
-## 1. The Macro Chronological Evolution
+## 🕰️ 1. The Macro Chronological Evolution
 
 The technical approach to value alignment has transitioned from unaligned text pools to fragile multi-model actor-critic loops, direct mathematical reparameterizations, and modern compiler-locked token verification enclaves.
 
@@ -30,7 +34,7 @@ flowchart LR
 
 ---
 
-## 2. Core Algorithmic & Objective Variants
+## ⚙️ 2. Core Algorithmic & Objective Variants
 
 The Preference Tuning family tree is strictly categorized based on the specific loss regularizations and input formatting data structures they enforce over the base policy.
 
@@ -43,7 +47,7 @@ The Preference Tuning family tree is strictly categorized based on the specific 
 
 ---
 
-## 3. The Distributed On-Policy Optimization Matrix
+## 🌐 3. The Distributed On-Policy Optimization Matrix
 
 To execute on-policy preference updates smoothly without triggering cluster-wide stalls, the distributed infrastructure shards the optimization matrix using precise step-boundary counters [INDEX: 22].
 
@@ -68,7 +72,7 @@ flowchart TB
 
 ---
 
-## 4. Production Engineering Challenges & Infrastructure Mitigations
+## 🛠️ 4. Production Engineering Challenges & Infrastructure Mitigations
 
 Deploying and scaling complex preference optimization pipelines across commercial high-performance computing setups introduces critical model drift vulnerabilities and data constraints [INDEX: 22].
 
@@ -79,7 +83,7 @@ Deploying and scaling complex preference optimization pipelines across commercia
 
 ---
 
-## 5. Frontier Real-World AI Industrial Applications
+## 🚀 5. Frontier Real-World AI Industrial Applications
 
 | Application | Details | Year First Used | Paper Link |
 | :--- | :--- | :--- | :--- |
@@ -89,7 +93,7 @@ Deploying and scaling complex preference optimization pipelines across commercia
 
 ---
 
-## References
+## 📚 References
 1. Ouyang, L., et al. (2022). Training language models to follow instructions with human feedback. *Advances in Neural Information Processing Systems (NeurIPS)*, 35, 27730-27744 [INDEX: 11].
 2. Rafailov, R., et al. (2023). Direct preference optimization: Your language model is secretly a reward model. *Advances in Neural Information Processing Systems (NeurIPS)* [INDEX: 11].
 3. Azar, M. G., et al. (2024). A general theoretical framework for direct preference optimization. *International Conference on Machine Learning (ICML)* [INDEX: 11].
