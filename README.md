@@ -14,7 +14,10 @@ The technical approach to value alignment has transitioned from unaligned text p
 
 
 ```mermaid
-[Unaligned Token Mimicry (Pre-2022)] ───> [Multi-Model Actor-Critic (PPO, 2022)] ───> [Direct Optimization (DPO, 2023)] ───> [Unified Compiler Hard-Locks (Present)](Unconstrained Hallucination Spaces)       ( Memory-Intensive VRAM Chokes )            (Static Binary Cross-Entropy Loss)         ( Sandbox-Verified Ground Truths )
+flowchart LR
+    A["Unaligned Token Mimicry (Pre-2022)<br/>(Unconstrained Hallucination Spaces)"] --> B["Multi-Model Actor-Critic (PPO, 2022)<br/>( Memory-Intensive VRAM Chokes )"]
+    B --> C["Direct Optimization (DPO, 2023)<br/>(Static Binary Cross-Entropy Loss)"]
+    C --> D["Unified Compiler Hard-Locks (Present)<br/>( Sandbox-Verified Ground Truths )"]
 ```
 
 
@@ -60,7 +63,15 @@ To execute on-policy preference updates smoothly without triggering cluster-wide
 
 
 ```mermaid
-Distributed Preference Tuning Pipeline[Input Prompt Shard] ───> [Generate Candidate Responses] ───> [Calculate Token Logits via Policy \(\pi _{\theta }\)]│▼[Update Active Weights] <── [Compute Binary Cross-Entropy] <── [Cross-Reference with Reference Model \(\pi _{r}ef\)]
+flowchart TB
+    subgraph Distributed Preference Tuning Pipeline
+        direction TB
+        A["Input Prompt Shard"] --> B["Generate Candidate Responses"]
+        B --> C["Calculate Token Logits via Policy \(\pi _{\theta }\)"]
+        C --> D["Cross-Reference with Reference Model \(\pi _{ref}\)"]
+        D --> E["Compute Binary Cross-Entropy"]
+        E --> F["Update Active Weights"]
+    end
 ```
 
 
