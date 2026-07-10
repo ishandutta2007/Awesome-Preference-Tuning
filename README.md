@@ -3,6 +3,9 @@
 </div>
 
 # ✨ Awesome-Preference-Tuning
+<div align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+</div>
 ## 🌟 Preference Tuning in AI: History, Progression, Variants, & Applications
 
 **Preference Tuning**—alternatively designated as human preference alignment, downstream behavior shaping, or value calibration optimization—is an advanced post-training paradigm in artificial intelligence designed to steer generative foundation models to conform to explicit human utility, safety, formatting style, and veracity standards [INDEX: 11, 25]. While initial self-supervised **Pre-training** optimizes models on massive token datasets to blindly mimic uncurated internet text [INDEX: 15], this frequently causes them to emit toxic tokens, execute hazardous payloads, or hallucinate false data. 
