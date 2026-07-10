@@ -36,21 +36,21 @@ The technical approach to value alignment has transitioned from unaligned text p
 
 The Preference Tuning family tree is strictly categorized based on the specific loss regularizations and input formatting data structures they enforce over the base policy.
 
-### A. Standard DPO (Bradley-Terry Formulation)
-*   **Mechanism:** Optimizes policy parameters directly over static, pre-curated chosen ($y_w$) and rejected ($y_l$) text paths [INDEX: 11]:
-    $$\mathcal{L}_{\text{DPO}}(\pi_\theta; \pi_{\text{ref}}) = -\mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}} \left[ \log \sigma \left( \beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)} \right) \right]$$
-*   **Behavior:** Amplifies winning token paths while penalizing losing paths, bounded by a reference model copy ($\pi_{\text{ref}}$) to prevent gradient explosion [INDEX: 11].
+- ### A. Standard DPO (Bradley-Terry Formulation)
+	*   **Mechanism:** Optimizes policy parameters directly over static, pre-curated chosen ($y_w$) and rejected ($y_l$) text paths [INDEX: 11]:
+	    $$\mathcal{L}_{\text{DPO}}(\pi_\theta; \pi_{\text{ref}}) = -\mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}} \left[ \log \sigma \left( \beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)} \right) \right]$$
+	*   **Behavior:** Amplifies winning token paths while penalizing losing paths, bounded by a reference model copy ($\pi_{\text{ref}}$) to prevent gradient explosion [INDEX: 11].
 
-### B. Kahneman-Tversky Optimization (KTO)
-*   **Mechanism:** Models the preference alignment loss to replicate behavioral utility mapping (Prospect Theory), showing that humans perceive losses more severely than equivalent gains [INDEX: 11].
-*   **Pros:** Bypasses the strict requirement for paired data [INDEX: 11]. It can optimize a model over decoupled, unpaired data rows tagged independently as *Desirable* or *Undesirable*, making raw system logs directly actionable [INDEX: 11].
+- ### B. Kahneman-Tversky Optimization (KTO)
+	*   **Mechanism:** Models the preference alignment loss to replicate behavioral utility mapping (Prospect Theory), showing that humans perceive losses more severely than equivalent gains [INDEX: 11].
+	*   **Pros:** Bypasses the strict requirement for paired data [INDEX: 11]. It can optimize a model over decoupled, unpaired data rows tagged independently as *Desirable* or *Undesirable*, making raw system logs directly actionable [INDEX: 11].
 
-### C. Odds Ratio Preference Optimization (ORPO)
-*   **Mechanism:** Merges the traditional Supervised Fine-Tuning (SFT) phase and the preference alignment phase into a single, unified loss calculation by tracking token odds ratios [INDEX: 11].
-*   **Pros:** Eliminates the final remaining memory bottleneck by completely removing the active Reference Model ($\pi_{\text{ref}}$) from VRAM during optimization loops [INDEX: 11].
+- ### C. Odds Ratio Preference Optimization (ORPO)
+	*   **Mechanism:** Merges the traditional Supervised Fine-Tuning (SFT) phase and the preference alignment phase into a single, unified loss calculation by tracking token odds ratios [INDEX: 11].
+	*   **Pros:** Eliminates the final remaining memory bottleneck by completely removing the active Reference Model ($\pi_{\text{ref}}$) from VRAM during optimization loops [INDEX: 11].
 
-### D. Reinforcement Learning from AI Feedback (RLAIF / Constitutional AI)
-*   **Mechanism:** Replaces human crowdsourcing with structured, model-driven evaluation pipelines [INDEX: 11]. A high-capacity language model reads response pairs alongside an explicit set of written rules (the **Constitution**), outputting normalized token log-probabilities to automate preference data tagging cheaply [INDEX: 11].
+- ### D. Reinforcement Learning from AI Feedback (RLAIF / Constitutional AI)
+	*   **Mechanism:** Replaces human crowdsourcing with structured, model-driven evaluation pipelines [INDEX: 11]. A high-capacity language model reads response pairs alongside an explicit set of written rules (the **Constitution**), outputting normalized token log-probabilities to automate preference data tagging cheaply [INDEX: 11].
 
 ---
 
